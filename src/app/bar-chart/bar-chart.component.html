@@ -1,3 +1,16 @@
+<form>
+  <h4>mat-select</h4>
+  <mat-form-field>
+    <mat-label>Favorite food</mat-label>
+    <mat-select [(ngModel)]="selectedDate" name="date">
+      @for (date of dateList; track date) {
+      <mat-option [value]="date.value">{{ date.viewValue }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <p>Year shown: {{ selectedDate }}</p>
+</form>
+
 <div class="chart-container">
-    <canvas  id="MyChart" >{{ chart }}</canvas>
+  <canvas id="MyChart">{{ chart }}</canvas>
 </div>
